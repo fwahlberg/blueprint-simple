@@ -21,3 +21,16 @@ after_success:
   - docker push wahlbergf100/multi-client
   - docker push wahlbergf100/multi-nginx
   - docker push wahlbergf100/multi-server
+
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'eu-west-2'
+  app: 'blueprint-simplified'
+  env: 'Blueprint-simplified-env'
+  bucket_name: 'elasticbeanstalk-eu-west-2-537923170705'
+  bucket_path: 'blueprint-simplified'
+  on:
+    branch: main
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
