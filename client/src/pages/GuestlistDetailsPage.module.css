@@ -1,0 +1,66 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .header {
+    text-align: center;
+  }
+  
+  .guestList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .guestItem {
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .guestInfo {
+    margin-right: 20px;
+    flex: 1; /* Allow this item to grow */
+  }
+  
+  .arrivalForm {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Prevent this item from shrinking */
+  }
+  
+  .arrivalForm input {
+    margin-right: 10px;
+    width: auto; /* Allow input to adjust its width */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    .guestItem {
+      flex-direction: column; /* Stack items vertically */
+      align-items: stretch; /* Stretch items to fill the width */
+    }
+  
+    .guestInfo {
+      margin-bottom: 10px; /* Add space between items when stacked */
+    }
+  
+    .arrivalForm {
+      justify-content: center; /* Center the form */
+    }
+  
+    .arrivalForm input {
+      width: 100%; /* Full width for the input */
+      max-width: 200px; /* Limit max width to keep it manageable */
+      margin-right: 0; /* Remove margin */
+      margin-bottom: 10px; /* Add space below the input */
+    }
+  }
+  

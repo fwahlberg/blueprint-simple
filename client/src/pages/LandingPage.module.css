@@ -1,0 +1,39 @@
+.landingPage {
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .buttonGroup {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  }
+  
+  .button {
+    margin-left: 10px;
+    padding: 10px 20px;
+    background-color: white;
+    color: #007bff;
+    border: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .button:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+  
+  .mainContent {
+    padding: 20px;
+    text-align: center;
+  }
+  

@@ -1,0 +1,23 @@
+sudo: required
+language: generic
+
+services:
+  - docker
+
+before_install:
+  - docker build -t wahlbergf100/react-test -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true wahlbergf100/react-test npm test
+
+after_success:
+  - docker build -t wahlbergf100/multi-client ./client
+  - docker build -t wahlbergf100/multi-nginx ./nginx
+  - docker build -t wahlbergf100/multi-server ./server
+
+  # Log in to the docker CLI
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+  # Take those images and push them to docker hub
+  - docker push wahlbergf100/multi-client
+  - docker push wahlbergf100/multi-nginx
+  - docker push wahlbergf100/multi-server
